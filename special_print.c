@@ -62,32 +62,30 @@ int print_reverse(va_list args, params_t *params)
  */
 int print_rot13(va_list args, params_t *params)
 {
-	int print_rot13(va_list args, params_t *params)
+	int i = 0;
+	int printed_chars = 0;
+	char *str = va_arg(args, char *);
+
+	UNUSED(params);
+
+	while (str[i])
 	{
-		int i = 0;
-		int printed_chars = 0;
-		char *str = va_arg(args, char *);
-
-		UNUSED(params);
-
-		while (str[i])
+		if ((str[i] >= 'A' && str[i] <= 'M')
+				|| (str[i] >= 'a' && str[i] <= 'm'))
 		{
-			if ((str[i] >= 'A' && str[i] <= 'M')
-					|| (str[i] >= 'a' && str[i] <= 'm'))
-			{
-				printed_chars += _putchar(str[i] + 13);
-			}
-			else if ((str[i] >= 'N' && str[i] <= 'Z')
-					|| (str[i] >= 'n' && str[i] <= 'z'))
-			{
-				printed_chars += _putchar(str[i] - 13);
-			}
-			else
-			{
-				printed_chars += _putchar(str[i]);
-			}
-			i++;
+			printed_chars += _putchar(str[i] + 13);
 		}
-
-		return (printed_chars);
+		else if ((str[i] >= 'N' && str[i] <= 'Z')
+				|| (str[i] >= 'n' && str[i] <= 'z'))
+		{
+			printed_chars += _putchar(str[i] - 13);
+		}
+		else
+		{
+			printed_chars += _putchar(str[i]);
+		}
+		i++;
 	}
+
+	return (printed_chars);
+}

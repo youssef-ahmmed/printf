@@ -21,19 +21,19 @@
 /**
  * struct parameters - struct token
  * @unsign: flag
- * 
+ *
  * @minus_flag: flag
  * @plus_flag: flag
  * @space_flag: flag
  * @zero_flag: flag
  * @hashtag_flag: flag
- * 
+ *
  * @width: width
  * @percision: precision
- * 
+ *
  * @h_modifier: flag
  * @l_modifier: flag
-*/
+ */
 typedef struct parameters
 {
 	unsigned int unsign : 1;
@@ -54,12 +54,12 @@ typedef struct parameters
 /**
  * struct specifier - struct token
  * @specifier: format token
- * @f: the associated function
-*/
+ * @function: the associated function
+ */
 typedef struct specifier
 {
 	char *specifier;
-	int (*function) (va_list, params_t *params);
+	int (*function)(va_list, params_t *params);
 } specifier_t;
 
 /* standard_output module */
@@ -88,7 +88,8 @@ int print_hex(va_list args, params_t *params);
 int print_HEX(va_list args, params_t *params);
 
 /* base_converter module */
-char *convert_num_to_string(long int num, int base, int flags, params_t *params);
+char *convert_num_to_string(long int num,
+		int base, int flags, params_t *params);
 
 /* getters functions */
 int get_flag(char *format, params_t *params);

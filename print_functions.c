@@ -3,9 +3,9 @@
  * print_char - prints a char
  * @args: list of arguments
  * @params: parameters
- * 
+ *
  * Return: number of chars printed
-*/
+ */
 int print_char(va_list args, params_t *params)
 {
 	char pad_char = ' ';
@@ -25,14 +25,15 @@ int print_char(va_list args, params_t *params)
  * print_string - prints a string
  * @args: list of arguments
  * @params: parameters
- * 
+ *
  * Return: number of chars printed
-*/
+ */
 int print_string(va_list args, params_t *params)
 {
 	char *str = va_arg(args, char *);
 	char pad_char = ' ';
 	unsigned int pad = 0, printed_chars = 0, i = 0, j;
+
 	UNUSED(params);
 
 	if ((int) !str)
@@ -67,10 +68,9 @@ int print_string(va_list args, params_t *params)
 }
 
 /**
- * print_number - prints a number
+ * print_int - prints an int
  * @args: list of arguments
  * @params: parameters
- * 
  * Return: number of chars printed
 */
 int print_int(va_list args, params_t *params)
@@ -91,9 +91,9 @@ int print_int(va_list args, params_t *params)
  * print_S - prints a string
  * @args: list of arguments
  * @params: parameters
- * 
+ *
  * Return: number of chars printed
-*/
+ */
 int print_S(va_list args, params_t *params)
 {
 	char *str = va_arg(args, char *);
@@ -125,9 +125,9 @@ int print_S(va_list args, params_t *params)
  * print_percent - prints a percent
  * @args: list of arguments
  * @params: parameters
- * 
+ *
  * Return: number of chars printed
-*/
+ */
 int print_percent(va_list args, params_t *params)
 {
 	UNUSED(params);
