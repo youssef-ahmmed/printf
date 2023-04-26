@@ -33,11 +33,16 @@ char *convert_num_to_string(long int num, int base,
 
 	*numbered_string = '\0';
 
-	while (n != 0)
-	{
-		*--numbered_string = array[n % base];
-		n /= base;
-	}
+	if (n == 0) {
+        *--numbered_string = '0';
+    }
+    else {
+        while (n != 0)
+        {
+            *--numbered_string = array[n % base];
+            n /= base;
+        }
+    }
 
 	if (sign)
 		*--numbered_string = sign;
