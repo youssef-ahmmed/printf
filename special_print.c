@@ -13,9 +13,9 @@ int print_from_to(char *start, char *end, char *except)
 
 	while (start <= end)
 	{
-		if (*start != *except)
+		if (start != except)
 		{
-			printed_chars += _putchar(*start++);
+			printed_chars += _putchar(*start);
 		}
 		start++;
 	}
@@ -31,7 +31,6 @@ int print_from_to(char *start, char *end, char *except)
  * Return: number of chars printed
  */
 int print_reverse(va_list args, params_t *params)
-
 {
 	int printed_chars = 0, len = 0;
 	char *str = va_arg(args, char *);

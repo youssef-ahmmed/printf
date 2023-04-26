@@ -6,7 +6,7 @@
  * @params: pointer to parameters
  * Return: flag
  */
-int get_flag(const char *format, params_t *params)
+int get_flag(char *format, params_t *params)
 {
 	int flag = 0;
 

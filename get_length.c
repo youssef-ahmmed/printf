@@ -6,7 +6,7 @@
  * @params: pointer to parameters
  * Return: length of format
  */
-int get_length(const char *format, params_t *params)
+int get_length(char *format, params_t *params)
 {
 	int length = 0;
 
