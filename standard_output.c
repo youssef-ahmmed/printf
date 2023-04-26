@@ -8,13 +8,15 @@
 int _puts(char *str)
 {
 	char *p = str;
+	int count = 0;
 
 	while (*p)
 	{
 		_putchar(*p++);
+		count++;
 	}
 
-	return (str - p);
+	return (count);
 }
 
 /**

@@ -16,7 +16,7 @@ char *convert_num_to_string(long int num, int base,
 	char sign = 0;
 	char *numbered_string = &buffer[49];
 	unsigned long n = num;
-	char *array;
+	static char *array;
 
 	UNUSED(params);
 
